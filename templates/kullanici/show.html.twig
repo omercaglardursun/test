@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>{{ adsoy }}</h3>
+<h1>{{ title }}</h1>
+
+
+<h2>İnfomedya</h2>
+    <br>
+ <h3>{{ adsoy }}</h3>
+    <br>
+    <div>
+        <h3>bilgiler ({{ comments|length }})</h3>
+    {% for comment in comments %}
+            <ul>{{ comment }}</ul>
+    {% endfor %}
+
+    </div>
+{% endblock %}
