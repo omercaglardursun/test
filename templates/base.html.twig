@@ -3,9 +3,43 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Girişler Sayfası{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">{% endblock %}
     </head>
     <body>
+    <nav class="navbar navbar-dark navbar-expand-md sticky-top bg-dark p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0"
+           href="{{ path('micro_post_index') }}">Micro Post Sayfası</a>
+        <div class="w-100 order-1 order-md-0">
+            <ul class="navbar-nav p-xs-t-100">
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item text-decoration-none text-xl-center">
+                        <a class="nav-link" href="{{ path('micro_post_add') }}">Yeni Kayıt</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="order-2 order-md-1">
+            <ul class="navbar-nav px-3">
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link"
+                           href="#">{{ app.user.fullName }}</a>
+                    </li>
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link"
+                           href="{{ path('security_login') }}">Çıkış</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link"
+                           href="{{ path('security_login') }}">Sign in</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

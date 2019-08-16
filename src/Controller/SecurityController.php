@@ -36,6 +36,7 @@ class SecurityController
      *  @\Symfony\Component\Routing\Annotation\Route("/cikis", name="security_logout")
      */
     public function cikis(){
+        #return $this->twig->render('login.html.twig');
 
     }
 

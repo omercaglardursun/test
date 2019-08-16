@@ -176,7 +176,7 @@ class MicroPostController
 
         return new Response(
             $this->twig->render(
-                'micro-post/goster.html.twig',
+                'micro-post/goster2.html.twig',
                 [
                     'post' =>$post
                 ]

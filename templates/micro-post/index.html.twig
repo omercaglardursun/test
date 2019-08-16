@@ -1,16 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <small class="d-block text-right mt-3">
-        <a href="{{ path('micro_post_add') }}">Yeni ekle</a>
-    </small>
-    {% for message in app.flashes('alert') %}
-        <small>{{ message }}</small>
-    {% endfor %}
-    {% for post in posts %}
-        <a href="{{ path('micro_post_post', {'id': post.id })}}"
-        {{ include('micro-post/goster.html.twig', {'post': post}) }}
 
-        <small class="d-block text-right mt-3">
+    {% for post in posts %}
+        <big class="d-block text-xl-center mt-3">
+            <a href="{{ path('micro_post_post', {'id': post.id })}}"
+            {{ include('micro-post/goster.html.twig', {'post': post}) }}
+
+        </big>
+        <small class="d-block text-xl-center mt-3">
             <a href="{{ path('micro_post_edit', {'id': post.id}) }}">Düzenle</a>
             <a href="{{ path('micro_post_delete', {'id': post.id}) }}">Silme</a>
         </small>

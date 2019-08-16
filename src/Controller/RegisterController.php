@@ -34,7 +34,7 @@ class RegisterController extends  Controller
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->redirect('micro_post_index');
+            $this->redirect('security_login');
         }
         return $this->render('register/register.html.twig',[
             'form' =>$form->createView()

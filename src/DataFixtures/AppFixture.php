@@ -29,8 +29,8 @@ class AppFixture extends Fixture
     private function loadMicroPosts(ObjectManager $manager){
         for ($i = 1; $i < 10; $i++){
             $micropost= new Micropost();
-            $micropost->setText('admin  ' . $i . ' giriş yapıldı');
-            $micropost ->setTime(new \DateTime('2018-03-15'));
+            $micropost->setText( $i . ' kez giriş yaptı.');
+            $micropost ->setTime(new \DateTime("now"));
             $manager->persist($micropost);
         }
         $manager->flush();

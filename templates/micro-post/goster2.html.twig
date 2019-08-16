@@ -1,0 +1,6 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <p class="media-body p-md-l-250-b-215 mb-0  text-xl-center">
+        <span class="d-block"><strong class="text-white-dark">{{ app.user.fullName }}</strong><small>. {{ post.time|date("d/m/Y") }}</small> </span>
+    </p>
+{% endblock %}
